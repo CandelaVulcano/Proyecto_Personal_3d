@@ -12,11 +12,13 @@
 #facilita mover el proyecto a otro equipo o servidor
 
 #Flujo recomendado
-#python -m venv .venv .\.venv\Scripts\Activate.ps1
+#python -m venv .venv
+#\.venv\Scripts\Activate.ps1
 #pip install -r requirements.txt
 
 # Dependencias principales del proyecto
 SQLAlchemy>=2.0,<3.0
 psycopg2-binary>=2.9,<3.0
+alembic>=1.13,<2.0
 python-dotenv>=1.0,<2.0
 
