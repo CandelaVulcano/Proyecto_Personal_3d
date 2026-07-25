@@ -1,0 +1,22 @@
+# Recomendación correcta
+#Lo ideal es:
+#Crear un archivo de dependencias como requirements.txt
+#Registrar allí todas las librerías necesarias
+#Cada persona cree su entorno virtual
+#Instale las dependencias dentro de ese entorno
+
+#¿Por qué es buena idea?
+#evita que cada persona use distintas versiones
+#reduce errores entre desarrolladores
+#hace que el proyecto sea reproducible
+#facilita mover el proyecto a otro equipo o servidor
+
+#Flujo recomendado
+#python -m venv .venv .\.venv\Scripts\Activate.ps1
+#pip install -r requirements.txt
+
+# Dependencias principales del proyecto
+SQLAlchemy>=2.0,<3.0
+psycopg2-binary>=2.9,<3.0
+python-dotenv>=1.0,<2.0
+
