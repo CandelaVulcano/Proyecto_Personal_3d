@@ -1,5 +1,7 @@
 from logging.config import fileConfig
+import importlib
 import os
+import pkgutil
 import sys
 from pathlib import Path
 
@@ -13,8 +15,15 @@ if str(ROOT) not in sys.path:
 
 load_dotenv(ROOT / ".env")
 
-from src.models.base import Base
-from src.models.usuario import Usuario  # noqa: F401
+from src.models import Base
+
+# Import all models dynamically so Alembic sees their metadata.
+models_package = importlib.import_module("src.models")
+package_path = models_package.__path__
+for finder, name, ispkg in pkgutil.iter_modules(package_path):
+    if name == "base":
+        continue
+    importlib.import_module(f"src.models.{name}")
 
 config = context.config
 
