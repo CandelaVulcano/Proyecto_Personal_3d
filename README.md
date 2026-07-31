@@ -26,10 +26,38 @@ python -m pip install -r requirements.txt
 
 ## Configurar la base de datos
 
+### Opción 1: usar PostgreSQL local instalado
+
 Crea un archivo `.env` en la raíz del proyecto con la URL de conexión a PostgreSQL:
 
 ```env
 DATABASE_URL=postgresql+psycopg2://usuario:contraseña@localhost:5432/mi_db_local
+```
+
+### Opción 2: usar PostgreSQL con Docker
+
+Si prefieres no instalar PostgreSQL localmente, puedes iniciar la base con Docker.
+
+```powershell
+docker compose up -d
+```
+
+Verifica que el contenedor esté activo:
+
+```powershell
+docker compose ps
+```
+
+Si necesitas detener la base de datos:
+
+```powershell
+docker compose down
+```
+
+Luego usa este `.env`:
+
+```env
+DATABASE_URL=postgresql+psycopg2://postgres:postgres@localhost:5432/proyecto_personal_3d
 ```
 
 > No subas tu `.env` al repositorio. Agrega `.env` a `.gitignore` si aún no está.
