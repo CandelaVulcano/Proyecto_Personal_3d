@@ -4,6 +4,39 @@
 
 Proyecto Python con FastAPI, SQLAlchemy y PostgreSQL. Usa Alembic para migraciones y `python-dotenv` para cargar la configuración de la base de datos.
 
+## Modelo de las tablas de la base de datos
+
+Usuario
+   │
+   ├──────────────┐
+   ▼              ▼
+Carrito         Pedido
+   │              │
+   ▼              ▼
+CarritoItem   PedidoItem
+      │             │
+      └──────┬──────┘
+             ▼
+          Producto
+             │
+             ▼
+         Categoría
+
+Producto
+   │
+   ▼
+Imagen
+
+Pedido
+   │
+   ▼
+Pago
+
+Pedido
+   │
+   ▼
+Dirección
+
 ## Requisitos previos
 
 - Python 3.11+ o compatible
