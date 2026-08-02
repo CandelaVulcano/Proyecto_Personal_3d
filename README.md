@@ -24,7 +24,7 @@ CarritoItem   PedidoItem
 
 Producto
    │
-   ▼
+   ▼                
 Imagen
 
 Pedido
