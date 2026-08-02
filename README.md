@@ -119,3 +119,4 @@ Opcional: si se usa una base de datos de desarrollo compartida, todos pueden apu
 ## Tests
 
 Para ejecutarlos ejecuta: .\.venv\Scripts\python.exe -m pytest -q
+Para listar los unit test: dir tests\unit

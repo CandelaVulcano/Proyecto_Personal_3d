@@ -9,4 +9,5 @@ class Producto(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     nombre: Mapped[str] = mapped_column(String(100), nullable=False)
+    descripcion: Mapped[str] = mapped_column(String(255), nullable=False)
     precio: Mapped[int] = mapped_column(Integer, nullable=False)
