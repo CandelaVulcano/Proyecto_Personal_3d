@@ -115,3 +115,7 @@ Opcional: si se usa una base de datos de desarrollo compartida, todos pueden apu
 - `psycopg2-binary` es el driver de PostgreSQL
 - `alembic` gestiona migraciones
 - `python-dotenv` carga variables de entorno
+
+## Tests
+
+Para ejecutarlos ejecuta: .\.venv\Scripts\python.exe -m pytest -q
