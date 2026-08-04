@@ -12,6 +12,9 @@ class ProductoRepository:
             nombre=nombre,
             descripcion=descripcion,
             precio=precio,
+            stock=0,
+            activo=True,
+            categoria_id=1  # Asignar un valor predeterminado para categoria_id
         )
         self.session.add(producto)
         self.session.commit()
