@@ -10,7 +10,7 @@ def test_registrar_usuario_con_sesion_de_test(db_session):
         nombre="Ana",
         apellido="Pérez",
         email="ana@test.com",
-        password_hash="hash123",
+        password_hash="hash1234",
     )
 
     assert usuario.email == "ana@test.com"

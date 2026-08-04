@@ -15,6 +15,9 @@ class UsuarioService:
         if self.repository.get_by_email(email):
             raise ValueError("El email ya está registrado")
 
+        if not password_hash or len(password_hash) < 8:
+            raise ValueError("La contraseña debe tener al menos 8 caracteres")
+
         return self.repository.create(
             nombre=nombre,
             apellido=apellido,
