@@ -7,14 +7,14 @@ class ProductoRepository:
     def __init__(self, session: Session | None = None):
         self.session = session or SessionLocal()
 
-    def create(self, nombre: str, descripcion: str, precio: float) -> Producto:
+    def create(self, nombre: str, descripcion: str, precio: float, stock: int, categoria: int) -> Producto:
         producto = Producto(
             nombre=nombre,
             descripcion=descripcion,
             precio=precio,
-            stock=0,
+            stock=stock,
             activo=True,
-            categoria_id=1  # Asignar un valor predeterminado para categoria_id
+            categoria_id=categoria
         )
         self.session.add(producto)
         self.session.commit()
