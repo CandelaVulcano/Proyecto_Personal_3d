@@ -153,3 +153,25 @@ Opcional: si se usa una base de datos de desarrollo compartida, todos pueden apu
 
 Para ejecutarlos ejecuta: .\.venv\Scripts\python.exe -m pytest -q
 Para listar los unit test: dir tests\unit
+
+
+## Cómo levantar el servidor
+
+Desde la carpeta raíz del proyecto:
+
+Activa el virtualenv:
+Activate.ps1
+Asegúrate de tener un .env con DATABASE_URL=...
+Inicia el servidor FastAPI con Uvicorn:
+
+uvicorn main:app --reload
+
+Cómo verlo en la web
+Abre el navegador en:
+http://127.0.0.1:8000
+Nota útil
+Si usas Docker para PostgreSQL, primero ejecuta:
+docker compose up -d
+Si aún no aplicaste migraciones, haz:
+alembic upgrade head
+Con el comando uvicorn main:app --reload, la API ya estará accesible en tu navegador.
